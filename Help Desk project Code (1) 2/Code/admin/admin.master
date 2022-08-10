@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin.master.cs" Inherits="admin_admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table class="style1">
+        <tr>
+            <td align="center" colspan="2">
+                <asp:AdRotator ID="AdRotator1" runat="server" Height="120px" Width="650px" 
+                    AdvertisementFile="~/XMLFile.xml" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <asp:Menu ID="Menu1" runat="server" BackColor="#003366" ForeColor="White" 
+                    Height="16px" Orientation="Horizontal" ScrollUpImageUrl="~/ADDS/barrage.jpg" 
+                    Width="753px">
+                    <StaticMenuStyle BackColor="Red" />
+                    <StaticSelectedStyle BackColor="#D2D0AE" ForeColor="#006666" />
+                    <StaticMenuItemStyle BackColor="#660033" />
+                    <DynamicHoverStyle BackColor="#003366" ForeColor="#FF0080" />
+                    <DynamicMenuStyle BackColor="#999999" />
+                    <DynamicSelectedStyle BackColor="White" ForeColor="#00CCFF" />
+                    <DynamicMenuItemStyle BackColor="#003366" ForeColor="#A39EA0" />
+                    <StaticHoverStyle BackColor="Silver" ForeColor="#666666" />
+                    <Items>
+                        <asp:MenuItem Text="Add Category" Value="Add Category" 
+                            NavigateUrl="~/admin/add category.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Add Sub Category" Value="Add Sub Category" 
+                            NavigateUrl="~/admin/add sub category.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Add Designation" Value="Add Designation" 
+                            NavigateUrl="~/admin/add designation.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Add Employee" Value="Add Employee" 
+                            NavigateUrl="~/admin/add employee.aspx"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/admin/view employee.aspx" Text="View Employee" 
+                            Value="View Employee"></asp:MenuItem>
+                        <asp:MenuItem Text="Logout" Value="Logout" NavigateUrl="~/home.aspx"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

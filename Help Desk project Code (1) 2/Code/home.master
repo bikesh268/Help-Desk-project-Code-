@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="home.master.cs" Inherits="home" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table class="style1">
+        <tr>
+            <td align="center" colspan="2">
+                <asp:AdRotator ID="AdRotator1" runat="server" Height="120px" Width="1000px" 
+                    AdvertisementFile="~/XMLFile.xml" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <asp:Menu ID="Menu1" runat="server" BackColor="#FF9900" ForeColor="White" 
+                    Height="16px" Orientation="Horizontal" ScrollUpImageUrl="~/ADDS/barrage.jpg" 
+                    Width="938px">
+                    <StaticMenuStyle BackColor="Red" />
+                    <StaticSelectedStyle ForeColor="#006666" />
+                    <StaticMenuItemStyle BackColor="#660033" />
+                    <DynamicSelectedStyle ForeColor="#00CCFF" />
+                    <DynamicMenuItemStyle BackColor="#003366" ForeColor="#A39EA0" />
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/home.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Employee.aspx" Text="Employee" Value="Employee">
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Client.aspx" Text="Client Login" 
+                            Value="Client Login"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/admin.aspx" Text="Admin" Value="Admin">
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
